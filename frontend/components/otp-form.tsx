@@ -117,9 +117,11 @@ export default function OtpForm() {
 
         // ✅ Case 2: Base64 + compressed frame
         else if (typeof event.data === "string") {
+          
           // Inflate base64 → ArrayBuffer
           const buffer = inflateBase64ToBuffer(event.data)
-
+          console.log(buffer.toString("utf8"));
+          
           // ✅ (Optional) debug – keep only if needed
           /*
           const bytes = new Uint8Array(buffer)
